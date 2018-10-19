@@ -1,0 +1,12 @@
+On right:
+sudo avrdude -p atmega32u4 -P /dev/ttyACM0 -c avr109 -U flash:w:redox_rev1_default_RGB.hex -U eeprom:w:keyboards/lets_split/eeprom-righthand.eep
+
+On left:
+sudo avrdude -p atmega32u4 -P /dev/ttyACM0 -c avr109 -U flash:w:redox_rev1_default_RGB.hex -U eeprom:w:keyboards/lets_split/eeprom-leftthand.eep
+
+If left microusb + plugged => OK
+If right microusb + plugged => hand reversed
+If right microusb alone => left
+
+LEFT MASTER + USE_I2C => broke again left part
+EE_HANDS + USE_SERIAL => deploy works (maybe EE_HANDS was sufficient)
